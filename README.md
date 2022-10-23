@@ -17,7 +17,7 @@ Xray panel with multi-protocol multi-user support [English Translated]
 # install & upgrade
 
 ```
-bash <(curl -Ls https://github.com/hermangroup/x-ui/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/hermangroup/x-ui/main/install.sh)
 ```
 
 ## Manual install & upgrade
