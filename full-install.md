@@ -19,3 +19,16 @@ curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --installcert -d s2ray.domain.com --key-file /root/private.key --fullchain-file /root/cert.crt
 
 bash <(curl -Ls https://raw.githubusercontent.com/hermangroup/x-ui/main/install.sh)
+
+- - - -
+- Activate SSH Root -
+
+sudo nano /etc/ssh/sshd_config
+
+- Add the following line to the file, you can add it anywhere but it’s good practice to find the block about authentication and add it there.
+PermitRootLogin yes
+
+sudo systemctl restart ssh
+
+sudo passwd root
+
