@@ -35,20 +35,32 @@ sudo passwd root
 - - - -
 - UDPGW -
  - Method 1 -
+ - 
 sudo wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/daybreakersx/premscript/master/badvpn-udpgw64"
 
 sudo touch /etc/rc.local
+
 sudo echo "\nscreen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300" >> /etc/rc.local
+
 sudo chmod +x /usr/bin/badvpn-udpgw
+
 sudo screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 
+
  - Method 2 -
+sudo wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/daybreakersx/premscript/master/badvpn-udpgw64"
+
 chmod +x /usr/bin/badvpn-udpgw
+
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
+
 nano /etc/rc.local
 
 - paste the below code before "exit 0"
+- 
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
+
 reboot
+
 netstat -nlpt | grep 7300
